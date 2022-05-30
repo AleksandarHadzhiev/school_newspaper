@@ -27,7 +27,7 @@ The app is currently being able to allow the user registrate, sign in (using JWT
 
 ## Starting the app
 
-For the app to work, you will have to run the backend (in my case it is intellij) and run npm start in your IDE (in my case it is VS code), before running the frontend use the npm install command to install the needed libraries.
+For the app to work, you will have to run the backend (in my case it is intellij) and run `npm start` in your IDE (in my case it is VS code), before running the frontend use the `npm install` command to install the needed libraries.
 
 ## Dependencies and used libraries
 
