@@ -1,4 +1,4 @@
-# school_newspaper
+# school_newspaper - in Progress
 
 ## General Information 
 
