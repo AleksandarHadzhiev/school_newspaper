@@ -1,0 +1,16 @@
+.component{
+    margin-top: 5rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.component img{
+    width: 50%;
+    height: 100%;
+}
+.component p{
+    font-size: 24px;
+}

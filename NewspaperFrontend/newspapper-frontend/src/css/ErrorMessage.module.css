@@ -1,0 +1,46 @@
+@keyframes flickerAnimation {
+    0%   { opacity:0; }
+    50%   { opacity:1; }
+    100% { opacity: 0; }
+  }
+  @-o-keyframes flickerAnimation{
+    0%   { opacity:0; }
+    50%   { opacity:1; }
+    100% { opacity: 0; }
+  }
+  @-moz-keyframes flickerAnimation{
+    0%   { opacity:0; }
+    50%   { opacity:1; }
+    100% { opacity: 0; }
+  }
+  @-webkit-keyframes flickerAnimation{
+    0%   { opacity:0; }
+    50%   { opacity:1; }
+    100% { opacity: 0; }
+  }
+  .background {
+     -webkit-animation: flickerAnimation 2s ease-in-out;
+     -moz-animation: flickerAnimation 2s ease-in-out;
+     -o-animation: flickerAnimation 2s ease-in-out;
+      animation: flickerAnimation 2s ease-in-out;
+  }
+.background{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 171, 171);
+    color: black;
+    font-size: 24px;
+    width: 20rem;
+    height: 3.5rem;
+}

@@ -1,0 +1,35 @@
+.links{
+    display: flex;
+    margin-right:1.5rem;
+}
+.link{
+    color: #473e30;
+    background: none;
+    text-decoration: none;
+    border: none;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 20px;
+}
+.link:hover{
+    color: #635F59;
+    border-bottom: brown 4px solid;
+}
+.siteName{
+    font-style: italic;
+    font-size: larger;
+    color: #635F59;
+}
+.navigationBar{
+    height: 3.5rem;
+    background-color: #F9EFDC;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.content{
+    display: flex;
+    align-items: center;
+    width: 53.5%;
+    justify-content:space-between;
+}
