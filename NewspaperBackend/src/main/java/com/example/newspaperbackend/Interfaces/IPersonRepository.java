@@ -1,7 +1,6 @@
 package com.example.newspaperbackend.Interfaces;
 
 import com.example.newspaperbackend.Module.Person;
-
 import java.util.UUID;
 
 public interface IPersonRepository {
@@ -16,5 +15,5 @@ public interface IPersonRepository {
 
     Person findByUsername(String username);
 
-    Person findByEmaik(String email);
+    Person findByEmail(String email);
 }

@@ -4,7 +4,6 @@ import com.example.newspaperbackend.Interfaces.IPersonService;
 import com.example.newspaperbackend.Module.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
 
 @CrossOrigin("*")
