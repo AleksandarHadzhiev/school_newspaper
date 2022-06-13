@@ -2,64 +2,54 @@ package com.example.newspaperbackend.Repository;
 
 import com.example.newspaperbackend.Interfaces.IarticleRepository;
 import com.example.newspaperbackend.Module.Article;
+import com.example.newspaperbackend.Module.Person;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.util.*;
 
 @Repository
 public class ArticleRepository implements IarticleRepository {
 
-
-    List<Article> articles;
+    HashMap<UUID,Article> articles;
 
     public ArticleRepository(){
-        this.articles= new ArrayList<>();
+        this.articles= new HashMap();
+    }
+
+    private List<Article> GetArticles(UUID userID, String date){
+        List<Article> sortedArticles = new ArrayList();
+        for (Map.Entry<UUID, Article> set: articles.entrySet())
+        {
+            Article article = set.getValue();
+            UUID wantedID = article.getPersonId();
+            String wantedDate = String.valueOf(article.getDateToDisplay());
+            if(wantedID.equals(userID) || wantedDate.equals(date)){
+                sortedArticles.add(article);
+            }
+        }
+        return  sortedArticles;
     }
 
     @Override
     public Article getArticle(UUID id) {
-
-        return getArticleById(id);
-    }
-
-
-
-    private Article receiveArticle(Article article){
-        for (Article a: articles
-        ) {
-            if(article.getArticleId().equals(a.getArticleId())){
-                return a;
-            }
-        }
-        return null;
+        return articles.get(id);
     }
 
     @Override
-    public List<Article> getArticles(String date) {
-        List<Article> wantedArticles = new ArrayList<>();
-
-        for (Article article:articles
-             ) {
-            String dateToDisplay = String.valueOf(article.getDateToDisplay());
-            if(dateToDisplay.equals(date)){
-                wantedArticles.add(article);
-            }
-        }
-        return wantedArticles;
+    public List<Article> getArticlesByDate(String date) {
+        return GetArticles(null,date);
     }
 
     @Override
     public List<Article> getAll() {
-        return articles;
+        return ((List<Article>) articles.values());
     }
 
     @Override
     public boolean createArticle(Article article) {
-        if(receiveArticle(article)==null){
-            articles.add(article);
+        if(article!=null){
+            articles.put(article.getArticleId(),article);
             return true;
         }
         return false;
@@ -67,11 +57,9 @@ public class ArticleRepository implements IarticleRepository {
 
     @Override
     public boolean editArticle(Article article) {
-        Article a = receiveArticle(article);
+        Article a = articles.get(article.getArticleId());
         if(a!=null){
-            a.setTitle(article.getTitle());
-            a.setTextContent(article.getTextContent());
-            a.setDateToDisplay(article.getDateToDisplay());
+            articles.replace(a.getArticleId(),article);
             return true;
         }
         return false;
@@ -79,34 +67,16 @@ public class ArticleRepository implements IarticleRepository {
 
     @Override
     public boolean removeArticle(UUID id) {
-        Article article = getArticleById(id);
+        Article article = articles.get(id);
         if(article!=null) {
-            int indexOfArticle = articles.indexOf(article);
-            articles.remove(indexOfArticle);
+            articles.remove(id);
             return true;
         }
         return false;
     }
 
-    private Article getArticleById(UUID id){
-        for (Article article:articles
-        ) {
-            if(article.getArticleId().equals(id)){
-                return article;
-            }
-        }
-        return null;
-    }
-
     @Override
     public List<Article> getUserArticles(UUID id) {
-        List<Article> userArticles = new ArrayList<>();
-        for (Article article:articles
-             ) {
-            if(article.getPersonId().equals(id)){
-                userArticles.add(article);
-            }
-        }
-        return userArticles;
+        return GetArticles(id,null);
     }
 }

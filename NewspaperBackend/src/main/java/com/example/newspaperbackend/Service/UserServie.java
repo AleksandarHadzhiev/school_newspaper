@@ -65,7 +65,7 @@ public class UserServie implements IPersonService, UserDetailsService {
 
     @Override
     public Person findByUsername(String username) {
-        return iPersonRepository.findByEmaik(username);
+        return iPersonRepository.findByEmail(username);
     }
 
     // HELPING METHOD

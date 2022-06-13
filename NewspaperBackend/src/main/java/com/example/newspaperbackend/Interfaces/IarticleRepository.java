@@ -10,7 +10,7 @@ public interface IarticleRepository {
 
     Article getArticle(UUID id);
 
-    List<Article> getArticles(String date);
+    List<Article> getArticlesByDate(String date);
 
     List<Article> getAll();
 

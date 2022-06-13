@@ -16,5 +16,5 @@ public interface IPersonRepository {
 
     Person findByUsername(String username);
 
-    Person findByEmaik(String email);
+    Person findByEmail(String email);
 }

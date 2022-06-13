@@ -16,8 +16,7 @@ public class UserRepository implements IPersonRepository {
     }
 
     private Person getUser(Person person){
-        for (Map.Entry<UUID, Person> set: profiles.entrySet()
-        )
+        for (Map.Entry<UUID, Person> set: profiles.entrySet())
         {
             if(set.getValue().getEmail().equals(person.getEmail()) || set.getValue().getUsername().equals(person.getUsername())){
                 return  set.getValue();
@@ -80,7 +79,7 @@ public class UserRepository implements IPersonRepository {
     }
 
     @Override
-    public Person findByEmaik(String email) {
+    public Person findByEmail(String email) {
         Person profile = new Person(UUID.randomUUID(),"",email,"","");
         return searchForUser(profile);
     }

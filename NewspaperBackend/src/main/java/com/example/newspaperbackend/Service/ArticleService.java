@@ -22,7 +22,7 @@ public class ArticleService implements IArticleService {
 
     @Override
     public List<Article> getArticles(String date) {
-        return iarticleRepository.getArticles(date);
+        return iarticleRepository.getArticlesByDate(date);
     }
 
     @Override
