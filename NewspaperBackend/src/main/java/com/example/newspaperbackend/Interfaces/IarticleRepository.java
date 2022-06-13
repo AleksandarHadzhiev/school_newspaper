@@ -1,8 +1,6 @@
 package com.example.newspaperbackend.Interfaces;
 
 import com.example.newspaperbackend.Module.Article;
-
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 

@@ -2,10 +2,7 @@ package com.example.newspaperbackend.Repository;
 
 import com.example.newspaperbackend.Interfaces.IarticleRepository;
 import com.example.newspaperbackend.Module.Article;
-import com.example.newspaperbackend.Module.Person;
 import org.springframework.stereotype.Repository;
-
-import java.time.LocalDate;
 import java.util.*;
 
 @Repository

@@ -3,7 +3,6 @@ package com.example.newspaperbackend.Service;
 import com.example.newspaperbackend.Interfaces.IPersonRepository;
 import com.example.newspaperbackend.Interfaces.IPersonService;
 import com.example.newspaperbackend.Module.Person;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

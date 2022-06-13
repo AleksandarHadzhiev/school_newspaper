@@ -3,8 +3,6 @@ package com.example.newspaperbackend.Module;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
-import netscape.javascript.JSObject;
-
 import java.util.UUID;
 
 @Getter

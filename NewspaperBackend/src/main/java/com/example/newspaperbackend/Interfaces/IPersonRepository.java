@@ -1,7 +1,6 @@
 package com.example.newspaperbackend.Interfaces;
 
 import com.example.newspaperbackend.Module.Person;
-
 import java.util.UUID;
 
 public interface IPersonRepository {
