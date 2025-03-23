@@ -1,5 +1,4 @@
-# school_newspaper - in Progress
-
+# school_newspaper
 ## General Information 
 
 React.js + Java/Spring Boot application
